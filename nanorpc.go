@@ -37,7 +37,7 @@ func main() {
 
 func PassRequestToNanoNode(b []uint8) []uint8 {
 
-	url := "http://[::1]:7076"
+	url := "http://[::1]:7076" // localhost
 
 	req, err := http.NewRequest("POST", url, bytes.NewBuffer(b))
 	req.Header.Set("Content-Type", "application/json")
@@ -56,5 +56,5 @@ func PassRequestToNanoNode(b []uint8) []uint8 {
 }
 
 // example use:
-// curl -s -XPOST -d'{ "action": "block_count" }' NODE.IP.ADD.RESS:9077/rpc
-// curl -g -d '{ "accounts": ["xrb_ADDRESS"], "action": "accounts_balances"  }' NODE.IP.ADD.RESS:9077/rpc
+// curl -s -XPOST -d'{ "action": "block_count" }' CONTAINER.PUBLIC.IP.ADDRESS:9077/rpc
+// curl -g -d '{ "accounts": ["xrb_ADDRESS"], "action": "accounts_balances"  }' CONTAINER.PUBLIC.IP.ADDRESS:9077/rpc
